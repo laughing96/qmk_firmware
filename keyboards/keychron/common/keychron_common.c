@@ -16,6 +16,7 @@
 
 #include QMK_KEYBOARD_H
 #include "keychron_common.h"
+#include "print.h"
 #ifdef FACTORY_TEST_ENABLE
 #    include "factory_test.h"
 #endif
@@ -86,6 +87,14 @@ void keychron_common_init(void) {
 
 bool process_record_keychron_common(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case KC_GLOBMAC:
+            if (record->event.pressed){
+                register_code(KC_GLOBE);
+
+            } else {
+                unregister_code(KC_GLOBE);
+            }
+            return false;
         case KC_MCTRL:
             if (record->event.pressed) {
                 register_code(KC_MISSION_CONTROL);

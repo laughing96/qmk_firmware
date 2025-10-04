@@ -273,6 +273,8 @@ static inline uint16_t KEYCODE2CONSUMER(uint8_t key) {
             return AUDIO_VOL_UP;
         case KC_AUDIO_VOL_DOWN:
             return AUDIO_VOL_DOWN;
+        case KC_GLOBE:
+            return AC_NEXT_KEYBOARD_LAYOUT_SELECT;
         case KC_MEDIA_NEXT_TRACK:
             return TRANSPORT_NEXT_TRACK;
         case KC_MEDIA_PREV_TRACK:
